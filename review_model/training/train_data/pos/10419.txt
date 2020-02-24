@@ -1,0 +1,1 @@
+type people: good bad beautiful movie purchase multiple py family friends

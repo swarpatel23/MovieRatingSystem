@@ -1,0 +1,2 @@
+npm install cheerio request
+npm i -s csv-parser

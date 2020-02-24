@@ -1,0 +1,19 @@
+{
+  "name": "puppet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "json2csv": "^4.5.4",
+    "puppeteer": "^2.0.0",
+    "puppeteer-select": "^1.0.3",
+    "text-miner": "^1.3.0"
+  }
+}

@@ -1,0 +1,1 @@
+copy movie create amaze movie
