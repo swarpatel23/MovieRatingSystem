@@ -40,8 +40,8 @@ Other than this we also have reviews from imdb for which we have stars given by 
 
 We used mongodb for database.
 <br>
-[Movie Schema](/react-app/server/models/movie.js)<br>
-[User Schema](/react-app/server/models/user.js)
+[Movie Schema](/movie-rating-app/server/models/movie.js)<br>
+[User Schema](/movie-rating-app/server/models/user.js)
 
 #
 
@@ -51,7 +51,7 @@ We used mongodb for database.
 
 #### classification report of tf-idf + logistic regression
 
-<img src="https://github.com/swarpatel23/MovieReviewSentiment/blob/master/review_model/training/classification_report.png" width="500" height="350">
+<img src="https://github.com/swarpatel23/MovieReviewSentiment/blob/master/review_model/training/classification_report.png" width="550" height="350">
 
 #### [Neural network with tf-idf](/review_model/training/neuralnet.py)<br>With Neural network and tf-idf we achieved accuracy same as logistic regression. To reduce execution time we used EarlyStopping and Dropping techniques and to improve performance we used l2 regularizer and epoch.
 
@@ -67,7 +67,7 @@ We used mongodb for database.
 
 ## React Component Structure
 
-![](component.jpeg)
+![](dependencygraph.svg)
 
 #
 
@@ -91,3 +91,5 @@ We used mongodb for database.
 - to start nodejs server go to `react-app/server` and run `node server.js`
 - to check ml script go to `review_model/training` and run `python predict.py`
 - to start flask api go to `review_model/training` and run `python api.py` and test using curl or postman or through react website.
+
+Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).

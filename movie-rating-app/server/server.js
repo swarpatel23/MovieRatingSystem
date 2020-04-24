@@ -1,5 +1,5 @@
-const Movie = require('./modals/movie');
-const User = require('./modals/user');
+const Movie = require('./models/movie');
+const User = require('./models/user');
 const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose');
 const express = require('express');
@@ -31,85 +31,85 @@ app.use(bodyParser.json());
 
 // this is our get method
 // this method fetches all available data in our database
-router.get('/getMovieIdList', (req, res) => {  
-  Movie.find({},{_id:1,poster:1,name:1,rated:1},{limit:50}, (err,movies)=>{
-    if(err)
-        res.send({error:err});
+router.get('/getMovieIdList', (req, res) => {
+  Movie.find({}, { _id: 1, poster: 1, name: 1, rated: 1 }, { limit: 50 }, (err, movies) => {
+    if (err)
+      res.send({ error: err });
     else
-        //res.send({movies: movies.cast[movies.cast.length-1]});
-        //res.json({movies: movies.cast[movies.cast.length-1]})
-        res.json({movies: movies})
+      //res.send({movies: movies.cast[movies.cast.length-1]});
+      //res.json({movies: movies.cast[movies.cast.length-1]})
+      res.json({ movies: movies })
   })
 });
-router.get('/getMovieIdListMod', (req, res) => {    
-  let page = 1, limit= 10,offset = 10;
+router.get('/getMovieIdListMod', (req, res) => {
+  let page = 1, limit = 10, offset = 10;
   let genre = 'all';
-  try{
+  try {
     page = parseInt(req.query.page);
     limit = parseInt(req.query.limit);
     genre = req.query.genre;
-    if(genre===undefined)
-      genre = "all";    
-    offset = (page-1)*limit;
-   // console.log('page',page, ' limit ', limit, ' skip', offset)
-   if(genre == "all"){
-      Movie.find({},{_id:1,poster:1,name:1,rated:1},{limit:limit, skip: offset}, (err,movies)=>{
-        if(err)
-            res.send({error:err});
-        else          
-            res.json({movies: movies})
+    if (genre === undefined)
+      genre = "all";
+    offset = (page - 1) * limit;
+    // console.log('page',page, ' limit ', limit, ' skip', offset)
+    if (genre == "all") {
+      Movie.find({}, { _id: 1, poster: 1, name: 1, rated: 1 }, { limit: limit, skip: offset }, (err, movies) => {
+        if (err)
+          res.send({ error: err });
+        else
+          res.json({ movies: movies })
       })
     }
-    else{
+    else {
       console.log("genre", genre)
-      Movie.find({genre: { "$in" : [genre]} },{_id:1,poster:1,name:1,rated:1},{limit:limit, skip: offset}, (err,movies)=>{
-        if(err)
-            res.send({error:err});
-        else          
-            res.json({movies: movies})
+      Movie.find({ genre: { "$in": [genre] } }, { _id: 1, poster: 1, name: 1, rated: 1 }, { limit: limit, skip: offset }, (err, movies) => {
+        if (err)
+          res.send({ error: err });
+        else
+          res.json({ movies: movies })
       })
     }
-  }catch(err){
-    res.send({error: err})
+  } catch (err) {
+    res.send({ error: err })
   }
 });
 
 
-router.get('/getMovieDetails', (req, res) => {  
-  let id = req.query.id  
+router.get('/getMovieDetails', (req, res) => {
+  let id = req.query.id
   console.log(id);
-  Movie.findOne({_id:id}, (err,movie)=>{
-    if(err)
-        res.send({error:err});
+  Movie.findOne({ _id: id }, (err, movie) => {
+    if (err)
+      res.send({ error: err });
     else
-        //res.send({movies: movies.cast[movies.cast.length-1]});
-        //res.json({movies: movies.cast[movies.cast.length-1]})
-        res.json({movie: movie})
+      //res.send({movies: movies.cast[movies.cast.length-1]});
+      //res.json({movies: movies.cast[movies.cast.length-1]})
+      res.json({ movie: movie })
   })
 });
 
-router.post('/getMovieDetailsWithIds', (req, res) => {  
+router.post('/getMovieDetailsWithIds', (req, res) => {
   let ids = req.body.ids;
   let oids = [];
   console.log(ids);
   for (let index = 0; index < ids.length; index++) {
     const element = ids[index];
     oids.push(mongoose.Types.ObjectId(element));
-  }  
-  Movie.find({_id:{$in:oids}},{_id:1,poster:1,name:1,rated:1}, (err,movies)=>{
-    if(err)
-        res.send({error:err});
-    else        
-        res.json({movies: movies})
+  }
+  Movie.find({ _id: { $in: oids } }, { _id: 1, poster: 1, name: 1, rated: 1 }, (err, movies) => {
+    if (err)
+      res.send({ error: err });
+    else
+      res.json({ movies: movies })
   })
 });
 
-router.get('/getMovieByName', (req, res) => {    
-  Movie.find({name: { "$regex" : req.query.name, $options: 'i' } },{_id: 1,name:1,poster:1},{limit: 10}, (err,movies)=>{
-    if(err)
-        res.send({error:err});
-    else          
-        res.json({movies: movies})
+router.get('/getMovieByName', (req, res) => {
+  Movie.find({ name: { "$regex": req.query.name, $options: 'i' } }, { _id: 1, name: 1, poster: 1 }, { limit: 10 }, (err, movies) => {
+    if (err)
+      res.send({ error: err });
+    else
+      res.json({ movies: movies })
   })
 });
 function verifyToken(req, res, next) {
@@ -172,54 +172,54 @@ router.post('/addWatchLater', function (req, res) {
 
   let email = req.body.email;
   let mid = req.body.movieid;
-  User.findOneAndUpdate({email:email},{$push:{favourite_list:mid}},{useFindAndModify: false}, (err, succ)=>{
-    if(err){
+  User.findOneAndUpdate({ email: email }, { $push: { favourite_list: mid } }, { useFindAndModify: false }, (err, succ) => {
+    if (err) {
       console.log(err);
       res.status(200).send(err);
-    }    
-    else{
+    }
+    else {
       console.log(succ);
       res.status(200).send(succ);
     }
-  })  
+  })
 })
 
 router.post('/removeWatchLater', function (req, res) {
 
   let email = req.body.email;
   let mid = req.body.movieid;
-  User.findOneAndUpdate({email:email},{$pullAll:{favourite_list:[mid]}},{useFindAndModify: false}, (err, succ)=>{
-    if(err){
+  User.findOneAndUpdate({ email: email }, { $pullAll: { favourite_list: [mid] } }, { useFindAndModify: false }, (err, succ) => {
+    if (err) {
       console.log(err);
       res.status(200).send(err);
-    }    
-    else{
+    }
+    else {
       console.log(succ);
       res.status(200).send(succ);
     }
-  })  
+  })
 })
 router.post('/PostReview', (req, res) => {
   let id = req.body.mid;
   console.log(req.body);
   Movie.findOne({ _id: id }, (err, movie) => {
-    if (err){
+    if (err) {
       res.send({ error: err });
     }
-    else{
-      let req_review = req.body.values;  
+    else {
+      let req_review = req.body.values;
       let reviewobj = {
         imdb_rating: req_review.stars,
         our_rating: 0,
-        aho_label: 0,  
-        heading: req_review.title,        
+        aho_label: 0,
+        heading: req_review.title,
         review: req_review.content
-      }; 
+      };
       console.log(reviewobj);
-      movie.reviews.push(reviewobj);      
+      movie.reviews.push(reviewobj);
       res.json({ review: movie.reviews })
-      movie.save();      
-  }
+      movie.save();
+    }
   })
 });
 app.use('/api', router);
