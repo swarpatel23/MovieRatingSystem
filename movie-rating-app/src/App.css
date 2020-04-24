@@ -1,0 +1,234 @@
+@import '~antd/dist/antd.dark.css';
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
+body{
+  background-color: #0f0f0f;
+}
+.mont{
+  font-family: 'Montserrat', sans-serif;
+}
+.roboto{
+  font-family: 'Roboto', sans-serif;
+}
+.menuBar{
+  padding: 0 20px;  
+  overflow: auto;
+  background-color: #141414;
+}
+.logo{
+  width: 150px;
+  float: left;
+}
+.logo a{
+  display: inline-block;
+  font-size: 20px;
+  padding: 19px 20px;
+  text-transform: capitalize;
+}
+.menuCon{
+  width: calc(100% - 150px);
+  float: left;
+}
+.menuCon .ant-menu-item{
+  padding: 0px 5px;
+}
+.menuCon .ant-menu-submenu-title{
+  padding: 10px 20px;
+}
+.menuCon .ant-menu-item a, .menuCon .ant-menu-submenu-title a{
+  padding: 10px 15px;
+}
+.menuCon .ant-menu-horizontal{
+  border-bottom: none;
+}
+.menuCon .leftMenu{
+  float: left;
+}
+.menuCon .rightMenu{
+  float: right;
+}
+.barsMenu{
+  float: right;
+  height: 32px;
+  padding: 6px;
+  margin-top: 8px;
+  display: none;
+  background: none;
+}
+.ant-drawer-body{
+  padding: 0;
+}
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item, .ant-drawer-body .ant-menu-horizontal > .ant-menu-submenu{
+  display: inline-block;
+  width: 100%;
+}
+.ant-drawer-body .ant-menu-horizontal{
+  border-bottom: none;
+}
+.ant-drawer-body .ant-menu-horizontal > .ant-menu-item:hover{
+  border-bottom-color: transparent;
+}
+.menu-icon-container{
+  margin-top: 20px;
+  padding-right: 1em;
+  float: right;
+}
+.menu-icon-container{
+  display: none;    
+}
+@media(max-width: 767px){
+  .menu-icon-container{
+    display: inline-block;
+  }
+  .leftMenu,.rightMenu{
+    display: none;
+  }
+  .logo a{
+    margin-left: -20px;
+  }
+  .menuCon .ant-menu-item, .menuCon .ant-menu-submenu-title{
+    padding: 1px 20px;
+  }
+  .logo a{
+    padding: 10px 20px;
+  }
+}
+.vertical-nav-container{
+  padding: 2em;
+}
+.vertical-nav-container > ol{
+  list-style: none;
+}
+.vertical-nav-container > ol > li{
+  margin-top: 1em;
+  font-size: 1.5em}
+/* .alice-carousel-btn{
+  background-color: black;
+  color: white;
+} */
+.alice-carousel-btn{
+  width: 50px;
+  font-size: 2em;
+  height: 317px;
+  border:none;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+  padding-left: 1px;  
+  padding-right: 3px;
+}
+/* *{
+  border: 2px solid red;
+} */
+.movie-name{
+  font-size:3.3em;
+  margin-bottom: 0;
+}
+.movie-description{
+  font-size: 1.3em;
+}
+.subheading{
+  text-transform: uppercase;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: rgba(255, 255, 255, 0);
+}
+.heading-text{
+  font-size: 30px;
+  stroke:white;
+  stroke-width:0.2px; 
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.heading-text:hover{
+  fill: white;
+}
+.poster-div
+{
+  text-align:center;
+  background-color: "black";  
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width:100%;
+  min-height: 500px;
+  box-shadow: "rgba(39, 39, 39, 0.11) 0px 1px 2px -2px, rgba(0, 0, 0, 0.93) 0px 3px 6px 0px, rgba(95, 95, 95, 0.31) 0px 5px 12px 4px";                                        
+}
+.poster-min-div
+{
+  text-align:center;
+  background-color: black;  
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  width:100%;
+  height: 70px;  
+}
+.active{
+  fill: white;
+  font-size: 35px;
+}
+.row-left{
+  padding-left: 4em;
+}
+.director-name{
+  font-size: 1.7em;   
+}
+.cast-img{
+  transition: all 0.2s ease-out;
+}
+.cast-img:hover{
+  transform:  scale(1.02);
+}
+.center-container{
+  position: relative;
+  height: calc(100vh - 70px);
+  width: 100%;  
+}
+.center-container-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #141414;
+  padding: 5em 2em;
+  transform: translate(-50%, -50%);
+}
+.home-container{
+  padding: 0;
+  margin: 0 auto;
+  width: 85%;  
+  display: grid;  
+  height: calc(100vh - 70px);
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 2em;
+}
+.home-logo{
+  width: 100%;  
+}
+.home-title{
+  font-size: 3em;
+
+  align-self: center;  
+}
+@media only screen and (max-width: 768px) {
+  .center-container-div{
+    padding: 2em 1.5em;
+  }
+}
+@media only screen and (max-width: 1040px) {
+  .heading-text{
+    font-size: 20px;   
+  }
+  .active{
+    font-size: 25px;
+  }
+  .row-left{
+    padding-left: 1em;
+  }
+  .home-container{
+    grid-template-columns: 100%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .poster-div{
+      min-height: 350px;
+  }
+}
