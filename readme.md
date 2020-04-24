@@ -67,7 +67,7 @@ We used mongodb for database.
 
 ## React Component Structure
 
-![](/react-app/dependencygraph.svg)
+![](component.jpeg)
 
 #
 
