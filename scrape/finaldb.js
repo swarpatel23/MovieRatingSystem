@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/moviedb');
 var dir = "reviewdata/"
-var loc,mloc;
+var loc, mloc;
 var Schema = new mongoose.Schema({
     imdbId: String,
     name: String,
@@ -471,13 +471,13 @@ async function extractMovieDetails(movieid) {
             if (saveerr)
                 console.log(saveerr);
             else {
-                review_data=moviedetail.reviews;
+                review_data = moviedetail.reviews;
                 movie_data = moviedetail;
                 json = JSON.stringify(review_data);
-                mjson=JSON.stringify(movie_data);
+                mjson = JSON.stringify(movie_data);
                 console.log(json.length);
                 if (json.length != 0) {
-                    loc =dir+movieid+".json" 
+                    loc = dir + movieid + ".json"
                     fs.writeFileSync(loc, json, 'utf8', function (err, data) {
                         if (err) {
                             console.log("eror while creating review file");
@@ -485,23 +485,23 @@ async function extractMovieDetails(movieid) {
                     });
                 }
                 if (mjson.length != 0) {
-                    mloc ="moviedata/"+movieid+".json" 
+                    mloc = "moviedata/" + movieid + ".json"
                     fs.writeFileSync(mloc, mjson, 'utf8', function (err, data) {
                         if (err) {
                             console.log("eror while creating review file");
                         }
                     });
                 }
-                    console.log("movieid ", movieid, "Completed");
-                }
-            });
+                console.log("movieid ", movieid, "Completed");
+            }
+        });
     } catch (error) {
         console.log(movie_url);
         console.error('ERROR:');
         console.error(error);
     }
     return 1;
-  
+
 }
 
 var imdblist = []
@@ -521,13 +521,11 @@ fs.createReadStream('BollywoodMovieDetail.csv')
     });
 
 
-async function scraping()
-{
-   for (let url of imdblist)
-   {
+async function scraping() {
+    for (let url of imdblist) {
         console.log(url);
-       let t=await extractMovieDetails(url);
-       console.log(t);
-   }
+        let t = await extractMovieDetails(url);
+        console.log(t);
+    }
 }
 

@@ -23,7 +23,7 @@ fs.readdir(bpath, (err, files) => {
             labelReview(file);
         }
     });
-    fs.writeFileSync("../word2vec/dataset/123.csv", output);
+    fs.writeFileSync("../word2vec/dataset/review_label.csv", output);
     fs.writeFileSync("../word2vec/dataset/train_pos.txt", pos.join(''));
     fs.writeFileSync("../word2vec/dataset/train_neg.txt", neg.join(''));
     console.log(review_percentage);
