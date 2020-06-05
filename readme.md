@@ -92,4 +92,20 @@ We used mongodb for database.
 - to check ml script go to `review_model/training` and run `python predict.py`
 - to start flask api go to `review_model/training` and run `python api.py` and test using curl or postman or through react website.
 
+## Using Docker
+
+- frontend : `docker run -p 3000:3000 swar23/movie-react-app` and check http://localhost:3000
+
+- review api : `docker run -p 5000:5000 swar23/reviewapp` and test using postman.<br>
+  using post method and url : http://localhost:5000/model/predict <br>
+  input format(json) : {"review" : "good movie ..."}<br>
+  output format(json) : {"predict" : "1"}<br>
+  1 - positive 0 - negative
+
+## website
+
+- Cinema Paradise - https://infallible-shirley-baf3d7.netlify.app/
+
+- review api - https://flaskreviewapi.herokuapp.com/model/predict
+
 Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
