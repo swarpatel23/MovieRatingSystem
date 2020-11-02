@@ -5,6 +5,10 @@ module.exports = function (app) {
     ));
 
     app.use(createProxyMiddleware('/model',
-        { target: 'http://localhost:12345' }
+        {
+            target: 'https://flaskreviewapi.herokuapp.com',
+            "secure": false,
+            "changeOrigin": true
+        }
     ));
 }

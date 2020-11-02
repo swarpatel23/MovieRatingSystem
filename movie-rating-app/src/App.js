@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Components/Navbar'
 import './App.css'
 import {
-  BrowserRouter as Router,  
+  BrowserRouter as Router,
   Route,
 } from "react-router-dom";
 
@@ -15,21 +15,21 @@ import Login from './Components/NavPages/Login'
 // import Details from './Components/Movie/Details';
 import MovieDetails from './Components/Movie/MovieDetails';
 import WatchLater from './Components/NavPages/WatchLater';
-
+import API from './Components/NavPages/API';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Route path="/" exact component={Home}/>
-      <Route path="/Contactus" exact component={Contactus}/>
-      <Route path="/Movies/:category" exact component={MovieList}/>      
-      <Route path="/Signup" exact component={SignUp}/>
-      <Route path="/Login" exact component={Login}/>
-      <Route path="/WatchLater" exact component={WatchLater}/>
-
-      <Route path="/Movie/:id" exact component={MovieDetails}/>
-    </Router>    
+      <Route path="/" exact component={Home} />
+      <Route path="/Contactus" exact component={Contactus} />
+      <Route path="/Movies/:category" exact component={MovieList} />
+      <Route path="/Signup" exact component={SignUp} />
+      <Route path="/Login" exact component={Login} />
+      <Route path="/WatchLater" exact component={WatchLater} />
+      <Route path="/API" exact component={API} />
+      <Route path="/Movie/:id" exact component={MovieDetails} />
+    </Router>
   );
 }
 

@@ -92,4 +92,7 @@ We used mongodb for database.
 - to check ml script go to `review_model/training` and run `python predict.py`
 - to start flask api go to `review_model/training` and run `python api.py` and test using curl or postman or through react website.
 
-Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
+## Using Docker
+
+- docker run -p <host port> :
+  Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
