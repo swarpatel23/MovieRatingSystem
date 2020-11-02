@@ -1,6 +1,8 @@
 # Movie Review Sentiment Analysis
 
 > We created website which uses machine learning model to predict reviews and rates movie based on that user review.
+- Cinema Paradise - https://infallible-shirley-baf3d7.netlify.app/  
+- review api - https://flaskreviewapi.herokuapp.com/model/predict
 
 ### Scraping
 
@@ -94,5 +96,42 @@ We used mongodb for database.
 
 ## Using Docker
 
+<<<<<<< HEAD
 - docker run -p <host port> :
   Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
+=======
+- frontend : `docker run -p 3000:3000 swar23/movie-react-app` and check http://localhost:3000
+
+- review api : `docker run -p 5000:5000 swar23/reviewapp` and test using postman.<br>
+  using post method and url : http://localhost:5000/model/predict <br>
+  input format(json) : {"review" : "good movie ..."}<br>
+  output format(json) : {"predict" : "1"}<br>
+  1 - positive 0 - negative
+
+## website Preview
+
+
+### Home page <br />
+![](screenshots/1-home.png)
+
+### Sign In page <br />
+![](screenshots/3-login.png)
+
+### Explore Movies as per your convenience <br />
+![](screenshots/4-movie-all.png)
+ 
+### Detail Movie page <br />
+![](screenshots/6-movie-details.png)
+![](screenshots/7-movie-details-cast.png)
+![](screenshots/8-movie-photos.png)
+
+### Explore Reviews of others and make reviews<br />
+![](screenshots/9-movie-reviews.png)
+
+### Quick Search Movies <br/>
+![](screenshots/13-searcg.png) 
+
+### Create Watch Later list <br />
+![](screenshots/11-watch-later.png) <br />
+Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
+>>>>>>> bd3de1619ef4d76419dbb2000e20e1a371c4635c
