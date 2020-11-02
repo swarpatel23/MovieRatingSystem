@@ -5,10 +5,6 @@ import pandas as pd
 import numpy as np
 import json
 import os
-<<<<<<< HEAD
-
-=======
->>>>>>> bd3de1619ef4d76419dbb2000e20e1a371c4635c
 # Your API definition
 app = Flask(__name__)
 port = int(os.environ.get("PORT", 5000))
