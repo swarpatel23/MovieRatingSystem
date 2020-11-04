@@ -96,10 +96,6 @@ We used mongodb for database.
 
 ## Using Docker
 
-<<<<<<< HEAD
-- docker run -p <host port> :
-  Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
-=======
 - frontend : `docker run -p 3000:3000 swar23/movie-react-app` and check http://localhost:3000
 
 - review api : `docker run -p 5000:5000 swar23/reviewapp` and test using postman.<br>
@@ -133,5 +129,5 @@ We used mongodb for database.
 
 ### Create Watch Later list <br />
 ![](screenshots/11-watch-later.png) <br />
+
 Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
->>>>>>> bd3de1619ef4d76419dbb2000e20e1a371c4635c
