@@ -1,8 +1,6 @@
-# Movie Review Sentiment Analysis
+# Movie Rating System Based on Review
 
-> We created website which uses machine learning model to predict reviews and rates movie based on that user review.
-- Cinema Paradise - https://infallible-shirley-baf3d7.netlify.app/  
-- review api - https://flaskreviewapi.herokuapp.com/model/predict
+> We created website which uses machine learning model to predict sentiment of reviews and rates movie based on that user reviews.
 
 ### Scraping
 
@@ -129,5 +127,8 @@ We used mongodb for database.
 
 ### Create Watch Later list <br />
 ![](screenshots/11-watch-later.png) <br />
+
+- Cinema Paradise - https://infallible-shirley-baf3d7.netlify.app/  
+- review api - https://flaskreviewapi.herokuapp.com/model/predict
 
 Made By Movie Lovers ❤️ [Swar Patel](https://github.com/swarpatel23) and [Priyank Chaudhri](https://github.com/pc810).
